@@ -1,2 +1,1 @@
-# klerikdust.github.io
-personal website
+# Personal website in development .

@@ -1,0 +1,22 @@
+{
+  "name": "crimsonapples",
+  "version": "1.0.0",
+  "description": "A personal website for naph's portfolio",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/klerikdust/crimsonapples.git"
+  },
+  "author": "Naphz Billy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/klerikdust/crimsonapples/issues"
+  },
+  "homepage": "https://github.com/klerikdust/crimsonapples#readme",
+  "dependencies": {
+    "moment": "^2.24.0"
+  }
+}
