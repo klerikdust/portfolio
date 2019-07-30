@@ -1,29 +1,94 @@
 <!DOCTYPE html>
 
-</html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width">
-        <title>naphnaphz</title> 
-        <link rel="stylesheet" href="style.css">
-        <script async src='./js/index.js'></script>
-    </head>
+<html lang="en">
 
-    <body>
-        <div class="topnav">
-                <a href="#about">About</a>
-                <a href="#contact">Portfolio</a>
-                <a href="#contact">Contact</a>
+<head>
+    <title>naphnaphz</title>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top ">
+        <a class="navbar-brand" href="#">naphnaphz</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav mr-4">
+                <li class="nav-item">
+                    <a class="nav-link " data-value="portfolio" href="#">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " data-value="contact" href="#socmed">Contact</a>
+                </li>
+            </ul>
         </div>
-        <div class="main-name">
-            naphnaphz
+    </nav>
+
+
+    <header class="header">
+        <div class="overlay"></div>
+        <div class="container text-center">
+            <div class="description">
+                <h1> naphnaphz
+                    <p> art meets code.
+                    </p>
+                    <button class="btn btn-outline-secondary btn-lg" data-value="contact" href="#about"><3</button>
+                </h1>
+            </div>
         </div>
-        <div class="name-title">
-            your imagination is the limit.
+    </header>
+
+
+
+    <!-- about section -->
+    <div class="about" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-3 col-sm-5">
+                    <img src="assets/pfp1.jpg" class="img-fluid">
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-5 desc text-left">
+
+                    <h3>Hello there!</h3>
+                    <p>
+                        I'm <strong>Naphz</strong>, or people usually called me Naph/Billy.<br>
+                        I'm a self-taught illustrator, coder & data-science enthusiast. I currently<br>
+                        studying Information Systems major at the Binus University Jakarta.
+                        I always wanted to bring more possibilities of arts through cutting edge technology!
+                    </p>
+                </div>
+            </div>
         </div>
-        <img src="assets/pfp1.png" alt="Avatar" class="avatar">
-        <div class="wrapper">
-            <div></div>
+    </div>
+
+
+
+    <div class="socialmedia-buttons" id="socmed">
+        <div class="container text-center">
+            <a href="mailto:nightcore.raven07@gmail.com"><i class="fa fa-envelope"></i></a>
+            <a href="https://twitter.com/naphnaphz" target="_blank"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.instagram.com/naphnaphz/?hl=en" target="_blank"><i class="fa fa-instagram"></i></a>
+            <a href="https://deviantart.com/naphnaphz" target="_blank"><i class="fa fa-deviantart"></i></a>
+            <a href="https://web.facebook.com/klerikdust" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.youtube.com/channel/UCoYPOQGYnPE9I5bGqsjbc3w" target="_blank"><i class="fa fa-youtube"></i></a>
         </div>
-    </body>
+
+    </div>
+
+
+    <div class="copyright">
+        <p class="text-center">© 2019 Naphz Billy</p>
+    </div>
+
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src='js/main.js'></script>
+</body>
+
 </html>

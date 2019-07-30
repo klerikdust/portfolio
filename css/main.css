@@ -1,0 +1,135 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+    font-family: Roboto;
+}
+
+.navbar {
+    background: rgb(255, 255, 255);
+}
+
+.nav-link,
+.navbar-brand {
+    color: #c7c7c7;
+    cursor: pointer;
+}
+
+.nav-link {
+    margin-right: 1em !important;
+    transition: all 0.2s ease;
+}
+
+
+
+.nav-link:hover {
+    color: hsl(0, 0%, 0%);
+    transition: all 0.2s ease;
+}
+
+.navbar-collapse {
+    justify-content: flex-end;
+}
+
+.navbar-toggler {
+    background: rgb(235, 235, 235) !important;
+}
+
+/*header style*/
+.header {
+    position: relative;
+    background: url('../assets/bg1.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.container {
+    text-align: center;
+}
+
+.description {
+    padding:1em;
+}
+
+.description h1 {
+    font-size: 60px;
+    margin: 4em 0;
+    color: rgb(236, 236, 236);
+}
+
+.description p {
+    color: rgb(221, 221, 221);
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.description button {
+    border: 1px solid rgb(194, 15, 39);
+    background: rgb(194, 15, 39);
+    color: #fff;
+}
+
+
+
+
+/*  Footer Area */
+.about {
+    padding: 10em;
+    position: relative;
+    height: 100%;
+}
+
+.about img {
+    max-height: 80%;
+    max-width: 80%;
+    border-radius: 100%
+}
+
+.about .desc h3 {
+    color: rgb(0, 0, 0);
+    font-size: 70px;
+}
+
+.about .desc p {
+    line-height: 2;
+    font-size: 13px;
+    color: rgb(99, 99, 99);
+}
+
+
+.socialmedia-buttons {
+    padding: 10px 0;
+}
+
+.socialmedia-buttons a {
+    color: #70726F;
+    font-size: 20px;
+    padding: 10px;
+    transition: all .5s ease;
+}
+
+.socialmedia-buttons a:hover {
+    color: rgb(192, 19, 48);
+}
+
+.copyright p {
+    position: relative;
+    color: gray;
+    margin: 2em;
+    font-size: 10px;
+}
