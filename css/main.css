@@ -4,24 +4,32 @@
 }
 
 @keyframes myfadeInAnimation {
-    from {opacity: 0;}
-    to {opacity: 1;}
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
+
 @-webkit-keyframes myfadeInAnimation {
-    from {opacity: 0;}
-    to {opacity: 1;}
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
+
 
 body {
     padding: 0;
     margin: 0;
     background: #ffffff;
     animation: myfadeInAnimation 1s;
-}
-
-
-html {
-    scroll-behavior: smooth;
+    text-align: right;
 }
 
 h1,
@@ -40,7 +48,8 @@ a {
 
 .nav-link,
 .navbar-brand {
-    color: #c7c7c7;
+    color: #dadada;
+    font-size: 20px;
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -50,14 +59,21 @@ a {
     transition: all 0.2s ease;
 }
 
-.navbar-brand:hover {
-    color: hsl(347, 76%, 37%);
+.navbar-brand {
+    margin-left: 2em !important;
     transition: all 0.2s ease;
+}
+
+.navbar-brand:hover {
+    color: hsl(160, 22%, 56%);
+    transition: all 0.2s ease;
+    font-size: 150%;
 }
 
 .nav-link:hover {
     color: hsl(0, 0%, 0%);
     transition: all 0.2s ease;
+    font-size: 150%;
 }
 
 .navbar-collapse {
@@ -68,101 +84,106 @@ a {
     background: rgb(235, 235, 235) !important;
 }
 
+
 /*header style*/
 .header {
     position: relative;
-    background: url('../assets/bg1.jpg');
+    background-image: url('../assets/bg1.jpg');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
+    height: 100vh;
 }
 
 
-.container {
-    text-align: center;
+.overlay {
+    position: absolute;
+    min-height: 100%;
+    min-width: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0.5;
+    background: rgba(22, 24, 29, 0.79);
 }
+
+
 
 .description {
-    padding: 1em;
+    position: absolute;
+    margin-top: 42vh;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: rgb(255, 255, 255);
+    
 }
 
 .description h1 {
     font-family: 'RobotoLight';
-    font-size: 60px;
-    margin: 4em 0;
-    color: rgb(236, 236, 236);
+    font-size: 7.5vw;
+    transition: all 1s ease-in-out;
 }
 
 .description p {
-    color: rgb(221, 221, 221);
-    font-size: 20px;
-    line-height: 1.5;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 2vh;
 }
 
-.description button {
-    border: 1px solid rgb(194, 15, 39);
-    background: rgb(194, 15, 39);
-    color: #fff;
-}
 
 
 
 
 /*  Footer Area */
 .about {
-    padding: 10em;
     position: relative;
-    height: 100vh;
+    margin-top: 20vh;
+    height: 80vh;
 }
 
 .about img {
-    max-width: 100%;
+    max-width: 23vh;
     border-radius: 100%;
-    display: flex;
 }
 
 .about .desc h3 {
     position: relative;
     color: rgb(83, 83, 83);
-    font-size: 70px;
+    font-size: 6vh;
+    transition: all 1s ease;
 }
 
 .about .desc p {
-    line-height: 2;
-    font-size: 13px;
+line-height: 2.5;
+    font-size: 1.5vh;
+    margin-left: 3vw;
     color: rgb(99, 99, 99);
 }
 
 
 .socialmedia-buttons {
-    padding: 10px 0;
-    margin-top: 7em;
+    margin-top: 8em;
 }
 
 .socialmedia-buttons a {
     color: #70726F;
-    font-size: 1.5em;
-    padding: 10px;
+    font-size: 3vh;
+    padding: 15px;
     transition: all .5s ease;
 }
 
 .socialmedia-buttons a:hover {
-    color: rgb(192, 19, 48);
+    color: rgb(48, 175, 133);
 }
 
 .copyright p {
     position: relative;
     color: gray;
-    font-size: 13px;
+    font-size: 1.5vh;
     margin-top: 1em;
 }
 
 
 
-.portfolio .container {
-    margin-left: auto;
-    margin-right: auto;
-}
 
 /*Portfolio*/
 .portfolio {
@@ -171,9 +192,6 @@ a {
 
 
 .portfolio img {
-    height: 100vh;
-    width: 100vh;
-
-    object-fit: cover;
+    height: 100;
+    width: 100%;
 }
-
