@@ -1,4 +1,16 @@
 $(document).ready(function () {
+    
+    
+    //  Adapt navbar when reaching specific offset.
+    $(window).scroll(function () {
+        var offset = $(window).scrollTop();
+        var transpaNavbar = offset >= ($(window).height() / 5);
+        $('.navbar').toggleClass('block', transpaNavbar);
+        $('.nav-link').toggleClass('block', transpaNavbar);
+        $('.navbar-brand').toggleClass('block', transpaNavbar);
+    });
+
+
     // Add scrollspy to <body>
     $('body').scrollspy({
         target: ".navbar",
