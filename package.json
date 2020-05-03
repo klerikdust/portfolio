@@ -1,21 +1,21 @@
 {
-  "name": "crimsonapples",
+  "name": "Naphz's Portfolio Web",
   "version": "1.0.0",
-  "description": "A personal website for naph's portfolio",
+  "description": "A portfolio website",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/klerikdust/crimsonapples.git"
+    "url": "git+https://github.com/klerikdust/klerikdust.github.io.git"
   },
   "author": "Naphz Billy",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/klerikdust/crimsonapples/issues"
+    "url": "https://github.com/klerikdust/klerikdust.github.io/issues"
   },
-  "homepage": "https://github.com/klerikdust/crimsonapples#readme",
+  "homepage": "https://github.com/klerikdust/klerikdust.github.io#readme",
   "dependencies": {
     "moment": "^2.24.0"
   }
