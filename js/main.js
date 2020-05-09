@@ -1,5 +1,4 @@
 window.addEventListener("beforeunload", function () {
-    console.log('going heree!')
   document.body.classList.add("animate-out");
 });
 
@@ -19,11 +18,4 @@ $(document).ready(function () {
         $('.site-navigation').toggleClass('show');
         $('.site-header').toggleClass('no-shadow');
     });
-
-    // Scroll to Next Section
-    $( '.scroll-down' ).click(function() {
-        $( 'html, body' ).animate({
-            scrollTop: $( '.scroll-down' ).offset().top + 100
-        }, 800 );
-    });
-})
+});
