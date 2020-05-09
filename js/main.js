@@ -7,7 +7,8 @@ $(document).ready(function () {
     // Main Navigation
     $( '.hamburger-menu' ).on( 'click', function() {
         $(this).toggleClass('close');
-        var currentHtml = document.location.href.match(/[^\/]+$/)[0]
+        var currentHtml = document.location.href.match(/[^\/]+$/) ? document.location.href.match(/[^\/]+$/)[0] : 'index'
+        console.log(currentHtml)
         if (currentHtml.startsWith('index')) {
             $('.outer-container-portfolio').toggleClass('expand');
         }
