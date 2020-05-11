@@ -66,6 +66,7 @@ ul {
 @media screen and (min-width: 992px) {
     .outer-container-portfolio {
         -webkit-transform: none;
+        -webkit-transform-origin-y: 100px;
         transform: none;
         transition: transform .2s linear;
     }
@@ -79,9 +80,10 @@ ul {
         max-width: 100%;
     }
     .outer-container-portfolio.expand {
-        -webkit-transform: translateX(200px) translateY(-200px) scale(0.7);
-        transform: translateX(200px) translateY(-200px) scale(0.7);
-        transition: transform .2s linear;
+        -webkit-transform: translateX(200px) translateY(-450px) scale(0.7);
+        -webkit-transform-origin-y: 100px;
+        transform: translate(200px, 0vh) scale(0.7);
+        transition: transform .2s linear
     }
     .outer-container-about.expand {
         transition: all ease-in .2s;
@@ -247,6 +249,24 @@ ul {
 }
 
 
+/* DEFAULT PORTFOLIO SECTION ---------------------------------------------*/
+.illustration {
+    justify-content: center;
+    text-align: center;
+    margin: 5em;
+}
+.illustration .title {
+    font-size: 3em;
+    color: black;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+.illustration .caption {
+    font-size: 1em;
+    color: gray;
+    font-weight: 200;
+}
+
 /* ---------------------------------------------
     MOBILE LAYOUT 
 ------------------------------------------------*/
@@ -326,6 +346,10 @@ ul {
         margin: 10px;
         font-size: 1.5em;
     }
+    .social-profiles-about {
+        justify-content: center;
+        padding-top: 3em;
+    }
     .social-profiles-about li {
         margin: 8px;
         font-size: 1.5em;
@@ -391,6 +415,8 @@ ul {
     }
     .site-header #site-logo {
         opacity: 0;
+        width: 0;
+        height: 0;
         position: absolute;
     }
     .site-title {

@@ -9,7 +9,7 @@ $(document).ready(function () {
         $(this).toggleClass('close');
         var currentHtml = document.location.href.match(/[^\/]+$/) ? document.location.href.match(/[^\/]+$/)[0] : 'index'
         console.log(currentHtml)
-        if (currentHtml.startsWith('index')) {
+        if (currentHtml.startsWith('index') || currentHtml.startsWith('portfolio')) {
             $('.outer-container-portfolio').toggleClass('expand');
         }
         if (currentHtml.startsWith('about')) {
