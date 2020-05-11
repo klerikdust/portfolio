@@ -70,13 +70,12 @@ ul {
         transition: transform .2s linear;
     }
     .outer-container-about {
-        -webkit-transform: none;
-        transform: none;
-        transition: transform .2s linear;
-        text-align: center;
+        transition: all ease-out .2s;
+        padding-left: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
         justify-content: center;
-        margin-left: 3%;
-        margin-right: 3%;
         max-width: 100%;
     }
     .outer-container-portfolio.expand {
@@ -85,11 +84,13 @@ ul {
         transition: transform .2s linear;
     }
     .outer-container-about.expand {
-        -webkit-transform: translateX(380px);
-        transform: translateX(380px);
-        transition: transform .2s linear;
-        width: 100%;
-        text-align: center;
+        transition: all ease-in .2s;
+        padding-left: 400px;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 @media screen and (min-width: 768px) {
@@ -232,11 +233,10 @@ ul {
     max-width: 500px;
 }
 .about .copyright-about {
+    display: flex;
+    justify-content: center;
     font-size: 1em;
     color: var(--default-textcolor);
-}
-.about .social-profiles-about {
-    display: inline-flex;
 }
 .about .social-profiles-about li i {
     transition: all 0.6s;
@@ -364,24 +364,22 @@ ul {
         position: fixed;
         top: 0;
         left: 0;
-        width: 80px;
+        width: 5%;
         height: 100vh;
         padding: 0 15px;
     }
     .site-navigation {
-        left: -250px;
+        left: -400px;
         background: var(--default-theme);
-        width: 250px;
         padding: 0;
     }
     .site-navigation.show {
-        z-index: 1;
+        z-index: 0;
         height: 100;
         box-shadow: 2px 0px 5px var(--default-shadowcolor);
         clip-path: inset(0px -50px -50px 0px);
         border-radius: 0 20px 20px 0;
-        left: 80px;
-        width: 300px;
+        width: 800px;
     }
     .site-navigation.show .site-header #site-logo {
         opacity: 1;
@@ -399,13 +397,15 @@ ul {
         padding: 28px 0 10px 0;
     }
     .hamburger-menu {
+        z-index: 1;
         display: block;
         position: absolute;
-        top: 50%;
+        top: 45%;
     }
     .hamburger-menu #menu-icon,
     .hamburger-menu #menu-close-icon {
         position: absolute;
+        z-index: 1;
     }
     .main-menu {
         margin-right: 40px;
@@ -434,7 +434,6 @@ ul {
         padding-bottom: 60px;
     }
     .about {
-        height: 100%;
         max-width: 100vw;
         max-height: 100vh;
         margin: 80px;
@@ -465,8 +464,8 @@ ul {
         top: calc((25vh + 150px) + 580px);
     }
     .about .social-profiles-about {
-        top: calc((25vh + 150px) + 500px);
         font-size: 1.5em;
+        justify-content: center;
     }
     .about .social-profiles-about li {
         margin: 15px;
