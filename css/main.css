@@ -194,7 +194,6 @@ ul {
 }
 .portfolio-content {
     width: 100%;
-    cursor: pointer;
     position: relative;
     float: right;
 }
@@ -218,10 +217,6 @@ ul {
     visibility: hidden;
     opacity: 0;
     transition: all 0.35s;
-}
-.portfolio-content:hover .overlay {
-    visibility: visible;
-    opacity: 1;
 }
 
 
