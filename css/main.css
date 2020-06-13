@@ -69,30 +69,35 @@ ul {
         -webkit-transform-origin-y: 100px;
         transform: none;
         transition: transform .2s linear;
+        will-change: transform;
     }
     .outer-container-about {
-        transition: all ease-out .2s;
-        padding-left: 0;
         height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
         max-width: 100%;
+
+        -webkit-transform: none;
+        transform: none;
+        transition: transform .2s linear;
+        will-change: transform;
     }
     .outer-container-portfolio.expand {
         -webkit-transform: translateX(200px) translateY(-450px) scale(0.7);
         -webkit-transform-origin-y: 100px;
         transform: translate(200px, 0vh) scale(0.7);
-        transition: transform .2s linear
+        transition: transform .2s linear;
+        will-change: transform;
     }
     .outer-container-about.expand {
-        transition: all ease-in .2s;
-        padding-left: 400px;
-        width: 100vw;
-        height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
+
+        transform: translate(200px, 0vh) ;
+        transition: transform .2s linear;
+        will-change: transform;
     }
 }
 @media screen and (min-width: 768px) {

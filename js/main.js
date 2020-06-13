@@ -8,7 +8,6 @@ $(document).ready(function () {
     $( '.hamburger-menu' ).on( 'click', function() {
         $(this).toggleClass('close');
         var currentHtml = document.location.href.match(/[^\/]+$/) ? document.location.href.match(/[^\/]+$/)[0] : 'index'
-        console.log(currentHtml)
         if (currentHtml.startsWith('index') || currentHtml.startsWith('portfolio')) {
             $('.outer-container-portfolio').toggleClass('expand');
         }
@@ -19,4 +18,6 @@ $(document).ready(function () {
         $('.site-navigation').toggleClass('show');
         $('.site-header').toggleClass('no-shadow');
     });
+
+
 });
