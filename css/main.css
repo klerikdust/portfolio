@@ -27,9 +27,9 @@ body {
 
 /* VARS SECTION ---------------------------------------------*/
 :root {
-    --default-theme: rgba(251, 251, 251, 1);
+    --default-theme: #edeff1;
     --default-margin: 0px;
-    --default-textcolor: rgba(0, 0, 0, 0.5);
+    --default-textcolor: #7c849c;
     --default-textonhover: rgba(0, 0, 0, 1);
     --default-shadowcolor: rgba(90, 91, 94, 0.1);
     --about-paragraphy-one: 350px;
@@ -151,7 +151,10 @@ ul {
     color: rgba(0, 0, 0, 0.5);
 }
 .social-profiles li i:hover {
-    color: var(--default-textonhover);
+    border-radius: 50px;
+    background: #edeff1;
+    box-shadow: inset 20px 20px 60px #c9cbcd, 
+                inset -20px -20px 60px #ffffff;
     cursor: pointer;
 }
 
@@ -239,13 +242,39 @@ ul {
     justify-content: center;
     font-size: 1em;
     color: var(--default-textcolor);
+    margin-top: 2em;
 }
+
+.about .social-profiles-about {
+    font-size: 1.5em;
+    justify-content: center;
+    text-align: center;
+}
+
 .about .social-profiles-about li i {
-    transition: all 0.6s;
+    border: 1px solid white;
+    background: var(--default-theme);
+    box-shadow: 3px 3px 10px #c6ccd2,
+                -3px -3px 10px #ffffff;
+    border-radius: 3em;
     color: var(--default-textcolor);
+    width: 2em;
+    padding: 0.5em;
 }
-.about .social-profiles-about li i:hover {
-    color: var(--default-textonhover);
+
+.about .social-profiles-about li i:hover,
+.about .social-profiles-about li i:active {
+    border: none;
+    border-radius: 50%;
+    box-shadow: inset 3px 3px 10px #c9cbcd, 
+                inset -3px -3px 10px #ffffff;
+}
+
+.about img {
+    border: 1px solid white;
+    padding: 7px;
+    background-color: var(--default-theme);
+    box-shadow: 15px 15px 30px #c6ccd2, -15px -15px 30px #ffffff;
 }
 
 
@@ -258,13 +287,13 @@ ul {
 .illustration .title {
     font-size: 3em;
     color: black;
-    font-weight: 300;
+    font-weight: 350;
     margin-bottom: 0;
 }
 .illustration .caption {
     font-size: 1em;
     color: gray;
-    font-weight: 200;
+    font-weight: 350;
 }
 
 /* ---------------------------------------------
@@ -295,6 +324,7 @@ ul {
         height: 500px;
         background: var(--default-theme);
         box-shadow: none;
+        will-change: transform;
     }
     .site-navigation.show {
         box-shadow: 0 12px 24px rgba(0,0,0,.09);
@@ -304,6 +334,7 @@ ul {
         transform: translateY(0%);
         opacity: 1;
         border-radius: 0 0 20px 20px;
+        will-change: transform;
     }
     .site-header #site-logo {
         width: 65px;
@@ -345,15 +376,15 @@ ul {
     }
     .social-profiles li {
         margin: 10px;
-        font-size: 1.5em;
+        font-size: 1.2em;
     }
     .social-profiles-about {
-        justify-content: center;
-        padding-top: 3em;
+        margin: 2em auto;
+        max-width: 500px;
     }
     .social-profiles-about li {
         margin: 8px;
-        font-size: 1.5em;
+        font-size: 1.2em;
     } 
     .copyright {
         margin-bottom: 50px;
@@ -369,12 +400,19 @@ ul {
     .about img {
         display: block;
         margin: auto;
-        max-width: 120px;
+        border: 5px solid var(--default-theme);
+        max-width: 130px;
         border-radius: 100%;
+        box-shadow: 20px 20px 40px #c5cace, -20px -20px 40px #ffffff;
     }
     .about h1 {
         margin-top: 0.5em;
         margin-bottom: 0.5em;
+    }
+    .illustration {
+        justify-content: center;
+        text-align: center;
+        margin: 5em;
     }
 }
 
@@ -401,10 +439,12 @@ ul {
     .site-navigation.show {
         z-index: 0;
         height: 100;
-        box-shadow: 2px 0px 5px var(--default-shadowcolor);
         clip-path: inset(0px -50px -50px 0px);
         border-radius: 0 20px 20px 0;
-        width: 800px;
+        width: 300px;
+        left: 0;
+        top: 0;
+        height: 100%;
     }
     .site-navigation.show .site-header #site-logo {
         opacity: 1;
@@ -433,6 +473,19 @@ ul {
     .hamburger-menu #menu-close-icon {
         position: absolute;
         z-index: 1;
+        background-color: var(--default-theme);
+        padding: 0.5em;
+        box-shadow: 3px 3px 10px #c6ccd2, -3px -3px 10px #ffffff;
+        border-radius: 50%;
+    }
+    .hamburger-menu #menu-close-icon {
+        position: absolute;
+        z-index: 1;
+        background-color: var(--default-theme);
+        padding: 0.5em;
+        box-shadow: inset 3px 3px 10px #c6ccd2,
+                    inset -3px -3px 10px #ffffff;
+        border-radius: 50%;
     }
     .main-menu {
         margin-right: 40px;
@@ -472,9 +525,12 @@ ul {
         justify-content: center;
     }
     .about img {
+        border: 1px solid #ffffff;
         max-width: 120px;
         border-radius: 100%;
         display: block;
+        box-shadow:  20px 20px 40px #c5cace, 
+                     -20px -20px 40px #ffffff;
     }
     .about h1 {
         font-size: 3.3em;
@@ -493,9 +549,17 @@ ul {
     }
     .about .social-profiles-about {
         font-size: 1.5em;
-        justify-content: center;
+        margin-left: 4em;
+        margin-right: 4em;
     }
     .about .social-profiles-about li {
         margin: 15px;
+    }
+    .illustration {
+        justify-content: center;
+        text-align: left;
+        margin: 5em;
+        margin-left: 12.5vw;
+        margin-right: 12.5vw;
     }
 }
