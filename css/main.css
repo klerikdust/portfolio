@@ -2,6 +2,9 @@
     font-family: 'RobotoLight';
     src: url('../assets/fonts/Roboto-Thin-webfont.woff');
 }
+html {
+    overflow-x: hidden;
+}
 body {
     text-align: left;
     background-color: var(--default-theme);
@@ -59,17 +62,27 @@ ul {
 }
 .row {
     justify-content: center;
-    margin-bottom: -17px;
 }
 
 /* OUTER SECTION ---------------------------------------------*/
 @media screen and (min-width: 992px) {
     .outer-container-portfolio {
         -webkit-transform: none;
-        -webkit-transform-origin-y: 100px;
         transform: none;
+        -webkit-transform-origin: top;
+        transform-origin: top;
         transition: transform .2s linear;
         will-change: transform;
+
+    }
+    .outer-container-portfolio.expand {
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        -webkit-transform: translateX(15vw) scale(0.8);
+        transform: translate(15vw, 35px) scale(0.7);
+        transition: transform .2s linear;
+        will-change: transform;
+  
     }
     .outer-container-about {
         height: 100vh;
@@ -80,13 +93,6 @@ ul {
 
         -webkit-transform: none;
         transform: none;
-        transition: transform .2s linear;
-        will-change: transform;
-    }
-    .outer-container-portfolio.expand {
-        -webkit-transform: translateX(200px) translateY(-450px) scale(0.7);
-        -webkit-transform-origin-y: 100px;
-        transform: translate(200px, 0vh) scale(0.7);
         transition: transform .2s linear;
         will-change: transform;
     }
@@ -109,7 +115,7 @@ ul {
 
 /* BRAND SECTION ---------------------------------------------*/
 .site-branding {
-    transition: all .5s;
+    transition: all 5s;
 }
 .site-title {
     margin: 0;
@@ -125,7 +131,6 @@ ul {
 .hamburger-menu #menu-close-icon {
     text-align: center;
     cursor: pointer;
-    transition: all 0.5s;
 }
 .hamburger-menu.close #menu-icon {
     visibility: hidden;
@@ -142,9 +147,6 @@ ul {
 .hamburger-menu img {
     display: block;
     margin: 0 auto;
-}
-.site-navigation {
-    transition: all .3s;
 }
 .social-profiles li i {
     transition: all 0.6s;
@@ -178,7 +180,6 @@ ul {
     display: block;
     color: #a6a6a6;
     text-decoration: none;
-    transition: all 0.35s;
 }
 .main-menu li a:hover,
 .main-menu li.current-menu-item a {
@@ -312,18 +313,23 @@ ul {
         justify-content: center;
         display: flex;
         height: 48px;
+        top: 5px;
+        border-radius: 50px;
     }
     .site-header .hamburger-menu {
         display: flex;
     }
     .site-navigation {
         position: fixed;
-        transform: translateY(-100%);
-        left: 0;
         width: 100%;
         height: 500px;
-        background: var(--default-theme);
-        box-shadow: none;
+        background-color: var(--default-theme);
+
+        -webkit-transform: translateY(-102%);
+        transform: translateY(-102%);
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        transition: transform .2s linear;
         will-change: transform;
     }
     .site-navigation.show {
@@ -332,7 +338,6 @@ ul {
         top: 0;
         visibility: visible;
         transform: translateY(0%);
-        opacity: 1;
         border-radius: 0 0 20px 20px;
         will-change: transform;
     }
@@ -354,14 +359,6 @@ ul {
     .main-menu li {
         position: relative;
     }
-    .main-menu li::after {
-        content: '';
-        position: absolute;
-        top: 11px;
-        right: 0;
-        font-family: 'FontAwesome', serif;
-    }
-
     .main-menu li:hover::after,
     .main-menu li.current-menu-item::after {
         color: var(--default-textonhover);
@@ -384,11 +381,15 @@ ul {
     }
     .social-profiles-about li {
         margin: 8px;
-        font-size: 1.2em;
+        font-size: 15px;
     } 
-    .copyright {
-        margin-bottom: 50px;
+    .copyright,
+    .main-menu li,
+    .main-menu li:nth-last-of-type(1) {
         align-self: center;
+    }
+    .main-menu li:nth-last-of-type(1) {
+        margin-top: 30px;
     }
     .about {
         max-width: 85rem;
@@ -432,19 +433,27 @@ ul {
         padding: 0 15px;
     }
     .site-navigation {
-        left: -400px;
+        left: -30vw;
+        width: 30vw;
         background: var(--default-theme);
         padding: 0;
+        -webkit-transform: none;
+        transform: none;
+        -webkit-transform-origin: left;
+        transform-origin: left;
+        transition: transform .2s linear;
+        will-change: transform;
     }
     .site-navigation.show {
+        -webkit-transform-origin: left;
+        transform-origin: left;
+        -webkit-transform: translateX(30vw);
+        transform: translateX(30vw));
+        transition: transform .2s linear;
+        will-change: transform;
         z-index: 0;
-        height: 100;
         clip-path: inset(0px -50px -50px 0px);
         border-radius: 0 20px 20px 0;
-        width: 300px;
-        left: 0;
-        top: 0;
-        height: 100%;
     }
     .site-navigation.show .site-header #site-logo {
         opacity: 1;
@@ -474,18 +483,14 @@ ul {
         position: absolute;
         z-index: 1;
         background-color: var(--default-theme);
-        padding: 0.5em;
-        box-shadow: 3px 3px 10px #c6ccd2, -3px -3px 10px #ffffff;
+        padding: 15px;
+        box-shadow: 3px 3px 10px #c6ccd2,
+                    -3px -3px 10px #ffffff;
         border-radius: 50%;
     }
     .hamburger-menu #menu-close-icon {
-        position: absolute;
-        z-index: 1;
-        background-color: var(--default-theme);
-        padding: 0.5em;
         box-shadow: inset 3px 3px 10px #c6ccd2,
                     inset -3px -3px 10px #ffffff;
-        border-radius: 50%;
     }
     .main-menu {
         margin-right: 40px;
@@ -497,22 +502,15 @@ ul {
     .main-menu li {
         border-bottom: 0;
     }
-    .social-profiles {
-        justify-content: flex-end;
-        align-items: right;
-        margin-right: 40px;
-        margin-bottom: 0;
-    }
     .social-profiles li {
         margin-left: 17px;
         font-size: 1em;
     }
+    .kofi-button {
+        padding-top: 100px;
+    }
     .copyright {
-        justify-content: right;
         text-align: right;
-        margin-right: 40px;
-        padding-top: 10px;
-        padding-bottom: 60px;
     }
     .about {
         max-width: 100vw;
@@ -548,7 +546,7 @@ ul {
         top: calc((25vh + 150px) + 580px);
     }
     .about .social-profiles-about {
-        font-size: 1.5em;
+        font-size: 15px;
         margin-left: 4em;
         margin-right: 4em;
     }
