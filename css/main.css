@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'RobotoLight';
-    src: url('../assets/fonts/Roboto-Thin-webfont.woff');
+    font-family: 'Quicksand';
+    src: url('../assets/fonts/Quicksand-VariableFont_wght.ttf');
 }
 html {
     overflow-x: hidden;
@@ -48,7 +48,7 @@ h4,
 h5,
 h6,
 a {
-    font-family: Roboto;
+    font-family: Quicksand;
 }
 ul {
     list-style-type: none;
@@ -206,9 +206,6 @@ ul {
     position: relative;
     float: right;
 }
-.home-page {
-    color: var(--default-theme);
-}
 .portfolio-content img {
     display: block;
     width: 100%;
@@ -246,14 +243,15 @@ ul {
     margin-top: 2em;
 }
 
+/* ---------------------------------------------
+   ABOUT PAGE - SOCIAL BUTTONS
+------------------------------------------------*/
 .about .social-profiles-about {
     font-size: 1.5em;
     justify-content: center;
     text-align: center;
 }
-
 .about .social-profiles-about li i {
-    border: 1px solid white;
     background: var(--default-theme);
     box-shadow: 3px 3px 10px #c6ccd2,
                 -3px -3px 10px #ffffff;
@@ -261,21 +259,23 @@ ul {
     color: var(--default-textcolor);
     width: 2em;
     padding: 0.5em;
+    transition: all .2s ease-in-out;
 }
-
-.about .social-profiles-about li i:hover,
+.about .social-profiles-about li i:hover {
+    color: black;
+    box-shadow: 1px 1px 3px #c9cbcd, 
+                -1px -1px 3px #ffffff;
+}
 .about .social-profiles-about li i:active {
-    border: none;
-    border-radius: 50%;
     box-shadow: inset 3px 3px 10px #c9cbcd, 
                 inset -3px -3px 10px #ffffff;
 }
 
 .about img {
-    border: 1px solid white;
     padding: 7px;
     background-color: var(--default-theme);
-    box-shadow: 15px 15px 30px #c6ccd2, -15px -15px 30px #ffffff;
+    box-shadow: 15px 15px 30px #c6ccd2,
+                -15px -15px 30px #ffffff;
 }
 
 
@@ -297,10 +297,25 @@ ul {
     font-weight: 350;
 }
 
+.dots-decoration {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: black;
+}
+
+
 /* ---------------------------------------------
     MOBILE LAYOUT 
 ------------------------------------------------*/
 @media screen and (max-width: 992px) {
+    /* ---------------------------------------------
+        RIGHT FLOATING SOCIAL BUTTONS
+    ------------------------------------------------*/
+    .floating-social-buttons {
+        opacity: 0;
+    }
+
     .row {
         margin-bottom: -15px;
     }
@@ -420,8 +435,81 @@ ul {
     }
 }
 
-/* Desktop Layout */
+/* ---------------------------------------------
+    DESKTOP LAYOUT 
+------------------------------------------------*/
 @media screen and (min-width: 992px) {
+
+
+    /* ---------------------------------------------
+        RIGHT FLOATING SOCIAL BUTTONS
+    ------------------------------------------------*/
+    .floating-social-buttons {
+        position: fixed;
+        right: 0;
+        top: 200px;
+        margin-right: 45px;
+        text-align: center;
+    }
+    .floating-social-buttons li {
+        margin: 20px;
+    }
+    .floating-social-buttons li a {
+        justify-content: center;
+    }
+    .floating-social-buttons li i {
+        background: var(--default-theme);
+        color: var(--default-textcolor);
+        box-shadow: 3px 3px 10px #c6ccd2,
+                    -3px -3px 10px #ffffff;
+        border-radius: 3em;
+        width: 2em;
+        padding: 0.5em;
+        transition: all .2s ease-in-out;
+    }
+    .floating-social-buttons li i:hover {
+        color: black;
+        box-shadow: 1px 1px 3px #c6ccd2,
+                    -1px -1px 3px #ffffff;
+    }
+    .floating-social-buttons li i:active {
+        box-shadow: inset 3px 3px 10px #c9cbcd, 
+                    inset -3px -3px 10px #ffffff;      
+    }
+
+
+    /* ---------------------------------------------
+        HAMBURGER COMPONENT
+    ------------------------------------------------*/
+    .hamburger-menu {
+        z-index: 1;
+        display: block;
+        position: absolute;
+        top: 45%;
+    }
+    .hamburger-menu #menu-icon,
+    .hamburger-menu #menu-close-icon {
+        position: absolute;
+        background-color: var(--default-theme);
+        padding: 15px;
+        box-shadow: 3px 3px 10px #c6ccd2,
+                    -3px -3px 10px #ffffff;
+        border-radius: 50%;
+        transition: all 0.2s ease-in-out;
+    }
+    .hamburger-menu #menu-icon:hover,
+    .hamburger-menu #menu-close-icon:hover { 
+        color: black;
+        box-shadow: 1px 1px 3px #c6ccd2,
+                    -1px -1px 3px #ffffff;   
+    }
+    .hamburger-menu #menu-icon:active,
+    .hamburger-menu #menu-close-icon:active { 
+        box-shadow: inset 3px 3px 10px #c6ccd2,
+                    inset -3px -3px 10px #ffffff;
+    }
+
+
     .site-header {
         z-index: 2
     }
@@ -475,26 +563,7 @@ ul {
     .site-title {
         padding: 28px 0 10px 0;
     }
-    .hamburger-menu {
-        z-index: 1;
-        display: block;
-        position: absolute;
-        top: 45%;
-    }
-    .hamburger-menu #menu-icon,
-    .hamburger-menu #menu-close-icon {
-        position: absolute;
-        z-index: 1;
-        background-color: var(--default-theme);
-        padding: 15px;
-        box-shadow: 3px 3px 10px #c6ccd2,
-                    -3px -3px 10px #ffffff;
-        border-radius: 50%;
-    }
-    .hamburger-menu #menu-close-icon {
-        box-shadow: inset 3px 3px 10px #c6ccd2,
-                    inset -3px -3px 10px #ffffff;
-    }
+
     .main-menu {
         margin-right: 40px;
         border-bottom: 0;
@@ -526,7 +595,6 @@ ul {
         justify-content: center;
     }
     .about img {
-        border: 1px solid #ffffff;
         max-width: 120px;
         border-radius: 100%;
         display: block;
