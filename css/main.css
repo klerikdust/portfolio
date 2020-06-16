@@ -304,6 +304,9 @@ ul {
     .row {
         margin-bottom: -15px;
     }
+    .kofi-button-img {
+        height: 50px;
+    }
     .site-header {
         position: fixed;
         z-index: 2;
