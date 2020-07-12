@@ -71,7 +71,7 @@ ul {
         transform: none;
         -webkit-transform-origin: top;
         transform-origin: top;
-        transition: transform .2s linear;
+        transition: transform .8s cubic-bezier(0.69, -0.01, 0, 1.39);
         will-change: transform;
 
     }
@@ -80,31 +80,49 @@ ul {
         transform-origin: top;
         -webkit-transform: translateX(15vw) scale(0.8);
         transform: translate(15vw, 35px) scale(0.7);
-        transition: transform .2s linear;
+        transition: transform .6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
         will-change: transform;
   
     }
     .outer-container-about {
-        height: 100vh;
+        height: 140vh;
         display: flex;
+        justify-content: center;
+        max-width: 100%;
+        -webkit-transform: none;
+        transform: none;
+        transition: transform .8s cubic-bezier(0.69, -0.01, 0, 1.39);
+        will-change: transform;
+    }
+    .outer-container-about.expand {
+        display: flex;
+        justify-content: center;
+        transform: translate(200px, 0vh) ;
+        transition: transform .6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        will-change: transform;
+    }
+
+    .outer-container-landing {
+        height: 100vh;
         align-items: center;
         justify-content: center;
         max-width: 100%;
 
         -webkit-transform: none;
         transform: none;
-        transition: transform .2s linear;
+        transition: transform .8s cubic-bezier(0.69, -0.01, 0, 1.39);
         will-change: transform;
     }
-    .outer-container-about.expand {
-        display: flex;
+
+    .outer-container-landing.expand {
         align-items: center;
         justify-content: center;
 
         transform: translate(200px, 0vh) ;
-        transition: transform .2s linear;
+        transition: transform .6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
         will-change: transform;
     }
+
 }
 @media screen and (min-width: 768px) {
     .no-padding {
@@ -169,17 +187,18 @@ ul {
 }
 .main-menu li {
     display: block;
-    padding: 12px 0;
+    padding: 15px 0;
     font-size: 25px;
     font-weight: 300;
 }
 .main-menu li:nth-last-of-type(1) {
     border-bottom: 0;
+    padding-top: 3em;
 }
 .main-menu li a {
-    display: block;
     color: #a6a6a6;
     text-decoration: none;
+    transition: all 0.2s;
 }
 .main-menu li a:hover,
 .main-menu li.current-menu-item a {
@@ -277,6 +296,13 @@ ul {
     box-shadow: 15px 15px 30px #c6ccd2,
                 -15px -15px 30px #ffffff;
 }
+.about .email {
+    text-decoration: none;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 0.9em;
+    transition: all 0.2s;
+}
 
 
 /* DEFAULT PORTFOLIO SECTION ---------------------------------------------*/
@@ -309,11 +335,33 @@ ul {
     MOBILE LAYOUT 
 ------------------------------------------------*/
 @media screen and (max-width: 992px) {
+
+    /* ---------------------------------------------
+        HOME - LANDING COMPONENTS
+    ------------------------------------------------*/
+    .landing {
+        height: 100vh;
+        position: relative;
+        text-align: center;
+    }
+    .landing .header {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 1em;
+        transform: translate(-50%, -50%);
+    }
+    .landing .header .main {
+        font-size: 1.5em;
+    }
+
     /* ---------------------------------------------
         RIGHT FLOATING SOCIAL BUTTONS
     ------------------------------------------------*/
     .floating-social-buttons {
         opacity: 0;
+        position: absolute;
     }
 
     .row {
@@ -347,7 +395,7 @@ ul {
         transform: translateY(-102%);
         -webkit-transform-origin: top;
         transform-origin: top;
-        transition: transform .2s linear;
+        transition: transform .6s cubic-bezier(0.4, 0, 0.2, 1);
         will-change: transform;
     }
     .site-navigation.show {
@@ -356,6 +404,7 @@ ul {
         top: 0;
         visibility: visible;
         transform: translateY(0%);
+        transition: transform .6s cubic-bezier(0.65, 0.05, 0.29, 1.12);
         border-radius: 0 0 20px 20px;
         will-change: transform;
     }
@@ -428,6 +477,9 @@ ul {
         margin-top: 0.5em;
         margin-bottom: 0.5em;
     }
+    .about .contents {
+        line-height: 2em;
+    }
     .illustration {
         justify-content: center;
         text-align: center;
@@ -442,12 +494,30 @@ ul {
 
 
     /* ---------------------------------------------
+        HOME - LANDING COMPONENTS
+    ------------------------------------------------*/
+    .landing {
+        height: 100vh;
+        position: relative;
+        text-align: center;
+    }
+    .landing .header {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    /* ---------------------------------------------
         RIGHT FLOATING SOCIAL BUTTONS
     ------------------------------------------------*/
     .floating-social-buttons {
+        z-index: 2;
         position: fixed;
         right: 0;
-        top: 200px;
+        top: 50vh;
+        transform: translateY(-50%);
         margin-right: 45px;
         text-align: center;
     }
@@ -509,7 +579,6 @@ ul {
                     inset -3px -3px 10px #ffffff;
     }
 
-
     .site-header {
         z-index: 2
     }
@@ -518,7 +587,7 @@ ul {
         background: var(--default-theme);
         position: fixed;
         top: 0;
-        left: 0;
+        left: 20px;
         width: 5%;
         height: 100vh;
         padding: 0 15px;
@@ -532,7 +601,7 @@ ul {
         transform: none;
         -webkit-transform-origin: left;
         transform-origin: left;
-        transition: transform .2s linear;
+        transition: transform .6s cubic-bezier(0.92, -0.05, 0.1, 1.18);
         will-change: transform;
     }
     .site-navigation.show {
@@ -540,7 +609,7 @@ ul {
         transform-origin: left;
         -webkit-transform: translateX(30vw);
         transform: translateX(30vw));
-        transition: transform .2s linear;
+        transition: transform .8s cubic-bezier(0.4, 0, 0, 1.07);
         will-change: transform;
         z-index: 0;
         clip-path: inset(0px -50px -50px 0px);
@@ -578,17 +647,18 @@ ul {
         margin-left: 17px;
         font-size: 1em;
     }
-    .kofi-button {
-        padding-top: 100px;
-    }
     .copyright {
         text-align: right;
     }
     .about {
         max-width: 100vw;
         max-height: 100vh;
-        margin: 80px;
+        margin: 15% 80px;
     }
+    .about .email:hover {
+        color: rgba(0, 0, 0, 1);
+    }
+
     .about .upper {
         display: flex;
         position: relative;
