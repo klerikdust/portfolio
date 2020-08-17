@@ -271,6 +271,7 @@ ul {
     text-align: center;
 }
 .about .social-profiles-about li i {
+    border: 1px #c9cbcd solid;
     background: var(--default-theme);
     box-shadow: 3px 3px 10px #c6ccd2,
                 -3px -3px 10px #ffffff;
@@ -281,11 +282,18 @@ ul {
     transition: all .2s ease-in-out;
 }
 .about .social-profiles-about li i:hover {
+    transform: translateY(10%);
+    -webkit-transform: translateY(10%);
+    transition: transform 250ms cubic-bezier(0.01, 0.02, 0.53, 2.02);
     color: black;
     box-shadow: 1px 1px 3px #c9cbcd, 
                 -1px -1px 3px #ffffff;
+
 }
 .about .social-profiles-about li i:active {
+    transform: translateY(15%);
+    -webkit-transform: translateY(15%);
+    transition: all 250ms cubic-bezier(0.01, 0.02, 0.53, 2.02);
     box-shadow: inset 3px 3px 10px #c9cbcd, 
                 inset -3px -3px 10px #ffffff;
 }
@@ -538,11 +546,17 @@ ul {
         transition: all .2s ease-in-out;
     }
     .floating-social-buttons li i:hover {
+        transform: translateY(10%);
+        -webkit-transform: translateY(10%);
+        transition: transform 250ms cubic-bezier(0.01, 0.02, 0.53, 2.02);
         color: black;
         box-shadow: 1px 1px 3px #c6ccd2,
                     -1px -1px 3px #ffffff;
     }
     .floating-social-buttons li i:active {
+        transform: translateY(15%);
+        -webkit-transform: translateY(15%);
+        transition: all 250ms cubic-bezier(0.01, 0.02, 0.53, 2.02);
         box-shadow: inset 3px 3px 10px #c9cbcd, 
                     inset -3px -3px 10px #ffffff;      
     }
@@ -562,21 +576,28 @@ ul {
         position: absolute;
         background-color: var(--default-theme);
         padding: 15px;
-        box-shadow: 3px 3px 10px #c6ccd2,
-                    -3px -3px 10px #ffffff;
+        box-shadow: 3px 3px 15px #c6ccd2,
+                    -3px -3px 15px #ffffff;
         border-radius: 50%;
+        border: 1px #c6ccd2 solid;
         transition: all 0.2s ease-in-out;
     }
     .hamburger-menu #menu-icon:hover,
     .hamburger-menu #menu-close-icon:hover { 
+        transform: translateY(10%);
+        -webkit-transform: translateY(10%);
+        transition: transform 250ms cubic-bezier(0.01, 0.02, 0.53, 2.02);
         color: black;
         box-shadow: 1px 1px 3px #c6ccd2,
                     -1px -1px 3px #ffffff;   
     }
     .hamburger-menu #menu-icon:active,
     .hamburger-menu #menu-close-icon:active { 
+        transform: translateY(15%);
+        -webkit-transform: translateY(15%);
         box-shadow: inset 3px 3px 10px #c6ccd2,
                     inset -3px -3px 10px #ffffff;
+        transition: all 250ms cubic-bezier(0.01, 0.02, 0.53, 2.02);
     }
 
     .site-header {
@@ -668,6 +689,7 @@ ul {
         max-width: 120px;
         border-radius: 100%;
         display: block;
+        border: 1px #c9cbcd solid;
         box-shadow:  20px 20px 40px #c5cace, 
                      -20px -20px 40px #ffffff;
     }
