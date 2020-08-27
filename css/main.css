@@ -689,7 +689,6 @@ ul {
         max-width: 120px;
         border-radius: 100%;
         display: block;
-        border: 1px #c9cbcd solid;
         box-shadow:  20px 20px 40px #c5cace, 
                      -20px -20px 40px #ffffff;
     }
