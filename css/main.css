@@ -320,17 +320,11 @@ ul {
     margin: 5em;
 }
 .illustration .title {
-    font-size: 3em;
+    font-size: 2em;
     color: black;
     font-weight: 350;
     margin-bottom: 0;
 }
-.illustration .caption {
-    font-size: 1em;
-    color: gray;
-    font-weight: 350;
-}
-
 .dots-decoration {
     position: absolute;
     width: 300px;
