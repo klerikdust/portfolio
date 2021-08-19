@@ -3,22 +3,9 @@ window.addEventListener("beforeunload", function () {
 });
 
 $(document).ready(function () {
-
-    // Main Navigation
-    $( '.hamburger-menu' ).on( 'click', function() {
-        $(this).toggleClass('close');
-        var currentHtml = document.location.href.match(/[^\/]+$/) ? document.location.href.match(/[^\/]+$/)[0] : 'index'
-
-        if (currentHtml.startsWith('index')) {
-            $('.outer-container-portfolio').toggleClass('expand');
-        }
-        if (currentHtml.startsWith('about')) {
-            $('.outer-container-about').toggleClass('expand');
-        }
-        $('.outer-container').toggleClass('expand');
-        $('.site-navigation').toggleClass('show');
-        $('.site-header').toggleClass('no-shadow');
+    $( '.menu' ).on( 'click', function() {
+        const node = document.getElementsByClassName(`drawer`)[0]
+        if (node.style.visibility === `hidden`) return node.style.visibility = `visible`
+        return node.style.visibility = `hidden`
     });
-
-
 });
