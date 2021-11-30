@@ -30,7 +30,7 @@ body {
 
 /* VARS SECTION ---------------------------------------------*/
 :root {
-    --default-theme: rgb(237, 237, 237);
+    --default-theme: rgb(233, 233, 233);
     --default-margin: 0px;
     --default-textcolor: #7c849c;
     --default-textonhover: rgba(0, 0, 0, 1);
@@ -53,16 +53,18 @@ ul {
 }
 .base {
     display: flex;
+    box-sizing: border-box;
 }
 .title {
-    font-size: 2.2em;
+    font-size: 2.5em;
     font-weight: 500;
     font-family: Quicksand;
-    margin: 150px 0 50px 0;
+    margin: 150px 0 50px 24px;
 }
 /** GALLERY COMPONENT */
 .portfolio {
     display: flex; 
+    justify-content: center;
     padding: 2px;
     transition: .3s;
     margin-bottom: 100px;
@@ -77,11 +79,9 @@ ul {
     width: 100%;
     transition: .3s;
 }
-.portfolio .column img:hover {
-    transform: scale(1.1);
-}
 .portfolio .column .link .thumb img:hover ~ .caption {
     opacity: 1;
+    z-index: 99999999999999;
 }
 .portfolio .column .link {
     margin: 1px;
@@ -92,15 +92,15 @@ ul {
     margin: 5px;
 }
 .portfolio .column .link .thumb .caption {
-    position: absolute;
     bottom: 0;
     left: 0;
-    padding: 25px 15px 15px;
     font-family: Quicksand;
     width: 100%;
     color: white;
     opacity: 0;
+    position: absolute;
     transition: .3s;
+    padding: 24px;
     cursor: pointer;
 }
 .portfolio .column .link .thumb .caption:hover {
@@ -111,24 +111,17 @@ ul {
 }
 
 /* SIDEBAR SECTION ---------------------------------------------*/
-.base .content {
-    position: absolute;
-    left: 30%;
-}
 .base .nav {
     z-index: 20;
-    position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 30%;
-    height: 800px;
-    margin: 0 0 50px 0;
+    margin-right: 32px;
 }
 .base .nav li {
     display: block;
     text-align: right;
-    padding: 15px 90px 15px 0;
+    padding: 16px;
 }
 .base .nav li a {
     font-size: 25px;
@@ -207,24 +200,20 @@ ul {
     z-index: 5;
     position: fixed;
     display: flex;
+    top: 0;
     align-items: center;
-    padding: 0 50px;
     background-color: var(--default-theme);
-    width: 100vw;
-    height: 100px;
     display: none;
 }
 .base .drawer {
     display: flex;
     visibility: hidden;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
-    z-index: 15;
+    z-index: 1;
     background-color: var(--default-theme);
     width: 100vw;
     position: fixed;
-    top: 100px;
     height: 500px;
 }
 .base .drawer li {
@@ -253,7 +242,6 @@ ul {
     About Section
 ------------------------------------------------*/
 .about {
-    margin-left: 40vw;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -276,21 +264,25 @@ ul {
     padding-left: 25px;
     color: var(--default-textonhover);
 }
-
-
+.base .menu img {
+    cursor: pointer;
+    z-index: 99999;
+}
 /* MOBILE/TABLET ---------------------------------------------*/
 @media screen and (max-width: 1120px) {
+    .base .menu img {
+        visibility: visible;
+    }    
     .base .mobile-nav {
         display: inherit;
+        position: fixed;
+        left: 0;
+        right: 0;
     }
     .base .mobile-nav .menu {
         cursor: pointer;
         z-index: 10;
         margin-left: auto;
-    }
-    .base .nav,
-    .floating-social-buttons {
-        display: none;
     }
     .base .content {
         display: flex;
@@ -316,6 +308,7 @@ ul {
     .about {
         margin: 200px 0;
         height: 100vh;
+        text-align: center;
         justify-content: center;
         align-items: center;
         padding: 0 30px;
@@ -323,7 +316,7 @@ ul {
     .about .contents  {
         width: 100%;
         margin-top: 50px;
-        line-height: 2em;
+        line-height: 3em;
     }
     .about .upper {
         display: flex;
@@ -347,6 +340,9 @@ ul {
     }
     .base .drawer {
         display: none;
+    }
+    .base .menu img {
+        visibility: hidden;
     }
 }
 
@@ -374,6 +370,7 @@ ul {
     font-size: 0.9em;
     font-weight: 400;
     text-align: left;
+    line-height: 2.25em;
     max-width: 600px;
 }
 .about .copyright-about {
@@ -398,7 +395,6 @@ ul {
     padding: 15px;
 }
 .about .social-profiles-about li i {
-    border: 1px #c9cbcd solid;
     background: var(--default-theme);
     box-shadow: 3px 3px 10px #c6ccd2,
                 -3px -3px 10px #ffffff;

@@ -45,46 +45,13 @@
 </head>
 
 <body class="animate-in">
-    <ul class="floating-social-buttons">
-        <li> <a href="mailto:hello@naphz.com"><i class="fa fa-envelope"></i></a></li> 
-        <li> <a href="https://twitter.com/naphnaphz" target="_blank"><i class="fa fa-twitter"></i></a></li> 
-        <li> <a href="https://deviantart.com/naphnaphz" target="_blank"><i class="fa fa-deviantart"></i></a></li> 
-        <li> <a href="https://facebook.com/naphnaphz" target="_blank"><i class="fa fa-facebook"></i></a></li> 
-        <li> <a href="https://youtube.com/c/naphnaphz" target="_blank"><i class="fa fa-youtube"></i></a></li> 
-    </ul>
     <div class="base">
-        <ul class="nav">
-            <li class="current-menu-item"><a>portfolio</a></li>
-            <li><a href="./html/about.html">artist</a></li>
-            <li class="kofi-button">
-                <a href='https://ko-fi.com/N4N81SAMH' target='_blank'>
-                    <img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi5.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' />
-                </a>
-            </li>
-            <li class="copyright">
-                copyright &copy;<script>document.write(new Date().getFullYear());</script> naphz</p>
-            </li>
-        </ul>
-        <ul class="mobile-nav">
-            <li class="menu">
-                <img class="open" alt="burger" src="../assets/menu.png">
-            </li>
-        </ul>
-        <ul class="drawer"> 
-            <li class="current-menu-item"><a>portfolio</a></li>
-            <li><a href="./html/about.html">artist</a></li>
-            <li class="kofi-button">
-                <a href='https://ko-fi.com/N4N81SAMH' target='_blank'>
-                    <img src='https://cdn.ko-fi.com/cdn/kofi5.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' />
-                </a>
-            </li>
-            <li class="copyright">
-                copyright &copy;<script>document.write(new Date().getFullYear());</script> naphz</p>
-            </li>
-        </ul>
-        <div class="content">
-            <h1 class="title">naphz's illustration.</h1>
-            <div class="portfolio">
+        <div style="display: flex; flex-direction: column;" class="content">
+            <ul style="justify-content: left; flex-direction: row; padding: 10vw 0 24px 0; margin-left: 5%;" class="nav">
+                <li class="current-menu-item"><a>naphz's works</a></li>
+                <li><a href="./html/about.html">artist</a></li>
+            </ul>
+            <div style="margin-bottom: 0;" class="portfolio">
                 <div class="column">
                     <a class="link">
                         <figure class="thumb">
@@ -196,6 +163,9 @@
                     </a>
                 </div>
             </div>
+            <p style="margin-bottom: 48px; align-self: center; color:#7c849c" class="copyright">
+                copyright &copy;<script>document.write(new Date().getFullYear());</script> naphnaphz</p>
+            </p>
         </div>
     </div>
 </body>
